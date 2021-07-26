@@ -16,7 +16,7 @@ class _KullaniciEkleState extends State<KullaniciEkle> {
   final _formKey = GlobalKey<FormState>();
 
   Future<bool> kullaniciOlustur({Map body}) async {
-    var url = Uri.parse('https://demo.tiyatrofil.com/Home/KullaniciKayit');
+    var url = Uri.parse('http://localhost:56793/Home/KullaniciKayit');
     return http.post(url, body: body).then((http.Response response) {
 
       final int statusCode = response.statusCode;

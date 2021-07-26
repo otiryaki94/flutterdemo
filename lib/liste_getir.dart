@@ -22,9 +22,10 @@ class _ListeGetirState extends State<ListeGetir> {
   }
 
    Future<List<Kullanici>> _kullaniciGetir() async {
-     var url = Uri.parse('https://demo.tiyatrofil.com/Home/Kullanicilistesi');
+     var url = Uri.parse('http://localhost:56793/Home/Kullanicilistesi');
      var response = await http.get(url);
      if(response.statusCode == 200){
+       print("sa"  + json.decode(response.body));
        return (json.decode(response.body) as List).map((kullaniciMap) => Kullanici.fromJson(kullaniciMap)).toList();
      }else{
        throw Exception("Bağlantı kurulamadı");
